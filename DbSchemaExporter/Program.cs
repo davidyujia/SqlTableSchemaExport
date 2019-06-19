@@ -12,6 +12,9 @@ namespace DbSchemaExporter
 {
     class Program
     {
+        const string _postgreSql = "pgsql";
+        const string _msSql = "mssql";
+
         static void Main(string[] args)
         {
             try
@@ -24,7 +27,7 @@ namespace DbSchemaExporter
 
                 var setting = new DatabaseSettingModel
                 {
-                    DbType = GetSwitchInput(argList, "-t", "Database Type:\n1. SQL Server\n2. PostgreSQL", new Dictionary<string, string> { { "1", "mssql" }, { "2", "pqsql" } }),
+                    DbType = GetSwitchInput(argList, "-t", "Database Type:\n1. SQL Server\n2. PostgreSQL", new Dictionary<string, string> { { "1", _msSql }, { "2", _postgreSql } }),
                     Host = GetInput(argList, "-s", "Server name or IP address:"),
                     DatabaseName = GetInput(argList, "-d", "Database name:"),
                     UserName = GetInput(argList, "-u", "Username:"),
@@ -35,10 +38,10 @@ namespace DbSchemaExporter
 
                 switch (setting.DbType.ToLower())
                 {
-                    case "mssql":
+                    case _msSql:
                         service = new MsSqlService();
                         break;
-                    case "pqsql":
+                    case _postgreSql:
                         service = new PostgresqlService();
                         break;
                 }
@@ -162,7 +165,7 @@ namespace DbSchemaExporter
                 goto again;
             }
 
-            return input;
+            return keyValues[input];
         }
     }
 }
