@@ -7,10 +7,12 @@ A MSSQL table schema exporter
 
  `-h` **Help**
 
+ `-t` **Database Type**, it must be "mssql" or "pqsql"
+
  `-s` **Server name or IP address**
 
  `-d` **Database name**
 
  `-u` **Account**
 
- `-p` **Password** 
+ `-p` **Password**
