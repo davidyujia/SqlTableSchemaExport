@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>dbo.__MigrationHistory</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>MigrationId</td><td>character varying(150)</td><td></td><td>False</td><td></td></tr>
+<tr><td>ContextKey</td><td>character varying(300)</td><td></td><td>False</td><td></td></tr>
+<tr><td>Model</td><td>bytea</td><td></td><td>False</td><td></td></tr>
+<tr><td>ProductVersion</td><td>character varying(32)</td><td></td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>dbo.AspNetRoles</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>Id</td><td>uuid</td><td></td><td>False</td><td></td></tr>
+<tr><td>Description</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>RoleChtName</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>Permissions</td><td>bigint</td><td></td><td>False</td><td></td></tr>
+<tr><td>Sort</td><td>integer</td><td></td><td>False</td><td></td></tr>
+<tr><td>Name</td><td>character varying(256)</td><td></td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>dbo.AspNetUserClaims</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>Id</td><td>integer</td><td>nextval('dbo."AspNetUserClaims_Id_seq"'::regclass)</td><td>False</td><td></td></tr>
+<tr><td>UserId</td><td>uuid</td><td></td><td>False</td><td></td></tr>
+<tr><td>ClaimType</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>ClaimValue</td><td>text</td><td></td><td>True</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>dbo.AspNetUserLogins</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>LoginProvider</td><td>character varying(128)</td><td></td><td>False</td><td></td></tr>
+<tr><td>ProviderKey</td><td>character varying(128)</td><td></td><td>False</td><td></td></tr>
+<tr><td>UserId</td><td>uuid</td><td></td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>dbo.AspNetUserRoles</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>UserId</td><td>uuid</td><td></td><td>False</td><td></td></tr>
+<tr><td>RoleId</td><td>uuid</td><td></td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>dbo.AspNetUsers</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>Id</td><td>uuid</td><td></td><td>False</td><td></td></tr>
+<tr><td>Name</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>DepName</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>DepId</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>UnitId</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>IsEnable</td><td>boolean</td><td></td><td>False</td><td></td></tr>
+<tr><td>IsDelete</td><td>boolean</td><td></td><td>False</td><td></td></tr>
+<tr><td>LoginIp</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>LastLoginTime</td><td>timestamp without time zone</td><td></td><td>True</td><td></td></tr>
+<tr><td>ModifyUser</td><td>uuid</td><td></td><td>True</td><td></td></tr>
+<tr><td>ModifyTime</td><td>timestamp without time zone</td><td></td><td>True</td><td></td></tr>
+<tr><td>Email</td><td>character varying(256)</td><td></td><td>True</td><td></td></tr>
+<tr><td>EmailConfirmed</td><td>boolean</td><td></td><td>False</td><td></td></tr>
+<tr><td>PasswordHash</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>SecurityStamp</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>PhoneNumber</td><td>text</td><td></td><td>True</td><td></td></tr>
+<tr><td>PhoneNumberConfirmed</td><td>boolean</td><td></td><td>False</td><td></td></tr>
+<tr><td>TwoFactorEnabled</td><td>boolean</td><td></td><td>False</td><td></td></tr>
+<tr><td>LockoutEndDateUtc</td><td>timestamp without time zone</td><td></td><td>True</td><td></td></tr>
+<tr><td>LockoutEnabled</td><td>boolean</td><td></td><td>False</td><td></td></tr>
+<tr><td>AccessFailedCount</td><td>integer</td><td></td><td>False</td><td></td></tr>
+<tr><td>UserName</td><td>character varying(256)</td><td></td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>api_event_source</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('api_event_source_seq'::regclass)</td><td>False</td><td>代碼</td></tr>
+<tr><td>unit_id</td><td>character varying</td><td></td><td>True</td><td>所屬單位代碼</td></tr>
+<tr><td>name</td><td>character varying</td><td></td><td>True</td><td>API名稱</td></tr>
+<tr><td>url</td><td>character varying</td><td></td><td>True</td><td>API網址</td></tr>
+<tr><td>is_enable</td><td>boolean</td><td>false</td><td>False</td><td>是否啟用</td></tr>
+<tr><td>data_source</td><td>character varying</td><td></td><td>True</td><td></td></tr>
+<tr><td>source_original_columns</td><td>character varying</td><td></td><td>True</td><td>來源欄位(比對一致性)</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>event</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('event_id_seq'::regclass)</td><td>False</td><td>事件編號</td></tr>
+<tr><td>name</td><td>character varying(300)</td><td></td><td>False</td><td>事件名稱</td></tr>
+<tr><td>apply_number</td><td>character varying(150)</td><td></td><td>False</td><td>活動通報單號</td></tr>
+<tr><td>apply_at</td><td>timestamp without time zone</td><td></td><td>True</td><td>送件日期</td></tr>
+<tr><td>activity_start_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>活動開始時間</td></tr>
+<tr><td>activity_end_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>活動結束時間</td></tr>
+<tr><td>type</td><td>integer</td><td></td><td>True</td><td>表單種類 1.高雄市政府交通局;2.高雄市政府警察局(共通);3.交通部國道高速公路局; 4.交通部公路總局;5.高雄市政府警察局(特定);6.高雄市政府體育處;</td></tr>
+<tr><td>competent_authority</td><td>integer</td><td></td><td>False</td><td>權責機關</td></tr>
+<tr><td>created_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>建立時間</td></tr>
+<tr><td>created_by</td><td>uuid</td><td></td><td>False</td><td>建立人員</td></tr>
+<tr><td>updated_at</td><td>timestamp without time zone</td><td></td><td>True</td><td>更新時間</td></tr>
+<tr><td>updated_by</td><td>uuid</td><td></td><td>True</td><td>更新人員</td></tr>
+<tr><td>status</td><td>integer</td><td>1</td><td>False</td><td>表單申請狀態 1.暫存;2.申請中;3.審查退回;4.自行退回;5.審查完成;</td></tr>
+<tr><td>apply_form_type</td><td>integer</td><td>1</td><td>False</td><td>表單類型 1.通用表單;2.迎神賽會活動;3.道路體育賽事;4.臨時使用道路;</td></tr>
+<tr><td>is_deleted</td><td>boolean</td><td>false</td><td>False</td><td>資料刪除</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>event_common</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('event_common_id_seq'::regclass)</td><td>False</td><td>編號</td></tr>
+<tr><td>event_id</td><td>integer</td><td></td><td>False</td><td>活動通報編號</td></tr>
+<tr><td>category</td><td>integer</td><td></td><td>True</td><td>通用活動類別，1.學術;2.婚喪喜慶;3.藝文;4.觀光;5.公益;6.體育;7.集會遊行;8.宗教活動;9.演習;</td></tr>
+<tr><td>content</td><td>text</td><td></td><td>False</td><td>活動主題及內容</td></tr>
+<tr><td>activity_link</td><td>character varying(500)</td><td></td><td>True</td><td>活動連結</td></tr>
+<tr><td>contact_name</td><td>character varying(50)</td><td></td><td>True</td><td>聯絡人姓名</td></tr>
+<tr><td>contact_tel</td><td>character varying(50)</td><td></td><td>True</td><td>連絡電話</td></tr>
+<tr><td>apply_unit</td><td>character varying(150)</td><td></td><td>True</td><td>申請單位</td></tr>
+<tr><td>road_used_details</td><td>text</td><td></td><td>True</td><td>申請道路使用明細</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>event_parameter</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('parameter_id_seq'::regclass)</td><td>False</td><td>編號</td></tr>
+<tr><td>key</td><td>character varying(150)</td><td></td><td>False</td><td>參數鍵</td></tr>
+<tr><td>value</td><td>character varying(500)</td><td></td><td>False</td><td>參數值</td></tr>
+<tr><td>description</td><td>character varying(500)</td><td></td><td>True</td><td>描述</td></tr>
+<tr><td>created_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>建立日期</td></tr>
+<tr><td>created_by</td><td>uuid</td><td></td><td>False</td><td>建立者</td></tr>
+<tr><td>updated_at</td><td>timestamp without time zone</td><td></td><td>True</td><td>更新日期</td></tr>
+<tr><td>update_by</td><td>uuid</td><td></td><td>True</td><td>更新者</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>event_police_festival</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('event_police_temp_id_seq'::regclass)</td><td>False</td><td>編號</td></tr>
+<tr><td>event_id</td><td>integer</td><td></td><td>True</td><td>活動通報編號</td></tr>
+<tr><td>applicant_name</td><td>character varying(50)</td><td></td><td>False</td><td>申請人姓名</td></tr>
+<tr><td>applicant_birthday</td><td>timestamp without time zone</td><td></td><td>True</td><td>申請人生日</td></tr>
+<tr><td>applicant_job</td><td>character varying(100)</td><td></td><td>True</td><td>申請人職業</td></tr>
+<tr><td>applicant_identity_number</td><td>character varying(50)</td><td></td><td>True</td><td>申請人身分證字號</td></tr>
+<tr><td>applicant_phone</td><td>character varying(100)</td><td></td><td>True</td><td>申請人聯絡電話</td></tr>
+<tr><td>applicant_address</td><td>character varying(500)</td><td></td><td>True</td><td>申請人地址</td></tr>
+<tr><td>apply_type</td><td>integer</td><td></td><td>True</td><td>申請理由，1,婚喪喜慶或其他;2.廟會活動;</td></tr>
+<tr><td>wedding_funeral_type</td><td>integer</td><td></td><td>True</td><td>1.婚事;2.喪事;3.新居落成;4.彌月;5.拍片演戲;6.餐會(尾牙)7.其他</td></tr>
+<tr><td>wedding_funeral_other_memo</td><td>character varying(100)</td><td></td><td>True</td><td></td></tr>
+<tr><td>religious_apply_type</td><td>integer</td><td></td><td>True</td><td>廟會活動申請項目，1.平安宴席;2.搭棚架;3.舞台戲曲;</td></tr>
+<tr><td>temple_name</td><td>character varying(100)</td><td></td><td>True</td><td></td></tr>
+<tr><td>is_private_altar</td><td>boolean</td><td></td><td>False</td><td>true:是私壇</td></tr>
+<tr><td>god_name</td><td>character varying(100)</td><td></td><td>True</td><td></td></tr>
+<tr><td>religious_ceremony_type</td><td>integer</td><td></td><td>True</td><td>祈福方式，1.普渡;2.祭祀;3.聖誕;4.進香;</td></tr>
+<tr><td>is_pilgrimage</td><td>boolean</td><td></td><td>False</td><td>true:繞境;false:無繞境;</td></tr>
+<tr><td>road_used_start_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>道路使用開始時間</td></tr>
+<tr><td>road_used_end_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>道路使用結束時間</td></tr>
+<tr><td>apply_district</td><td>character varying(50)</td><td></td><td>True</td><td>申請使用道路範圍-分區</td></tr>
+<tr><td>apply_road_name</td><td>character varying(250)</td><td></td><td>True</td><td>申請使用道路範圍-道路</td></tr>
+<tr><td>apply_road_width</td><td>character varying(50)</td><td></td><td>True</td><td>申請使用道路範圍-左右各幾公尺</td></tr>
+<tr><td>road_apply_range</td><td>character varying</td><td></td><td>True</td><td>申請車道種類，全封閉;部分封閉;</td></tr>
+<tr><td>road_types</td><td>integer</td><td></td><td>True</td><td>申請車道種類</td></tr>
+<tr><td>road_direction</td><td>integer</td><td></td><td>True</td><td>申請車道方向</td></tr>
+<tr><td>vehicle_restriction_range</td><td>character varying</td><td></td><td>True</td><td>限制進路車種，全車種;部分車種;</td></tr>
+<tr><td>vehicle_restrictions</td><td>integer</td><td></td><td>True</td><td>限制進路車種</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>event_police_religion</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>organizer</td><td>character varying(150)</td><td></td><td>False</td><td>申請/主辦單位名稱</td></tr>
+<tr><td>establish_id</td><td>character varying(150)</td><td></td><td>True</td><td>立案字號</td></tr>
+<tr><td>organizer_address</td><td>character varying(500)</td><td></td><td>True</td><td>單位地址</td></tr>
+<tr><td>organizer_phone</td><td>character varying(100)</td><td></td><td>True</td><td>單位電話</td></tr>
+<tr><td>organizer_fax</td><td>character varying(100)</td><td></td><td>True</td><td>單位傳真</td></tr>
+<tr><td>owner_name</td><td>character varying(50)</td><td></td><td>True</td><td>負責人姓名</td></tr>
+<tr><td>owner_birthday</td><td>timestamp without time zone</td><td></td><td>True</td><td>負責人生日</td></tr>
+<tr><td>owner_identity_number</td><td>character varying(50)</td><td></td><td>True</td><td>國民身分證統一編號</td></tr>
+<tr><td>owner_address</td><td>character varying(500)</td><td></td><td>True</td><td>負責人地址</td></tr>
+<tr><td>owner_phone</td><td>character varying(100)</td><td></td><td>True</td><td>負責人電話</td></tr>
+<tr><td>owner_cellphone</td><td>character varying(100)</td><td></td><td>True</td><td>負責人手機</td></tr>
+<tr><td>owner_fax</td><td>character varying(100)</td><td></td><td>True</td><td>負責人傳真</td></tr>
+<tr><td>applicant_name</td><td>character varying(50)</td><td></td><td>True</td><td>申請人姓名</td></tr>
+<tr><td>applicant_address</td><td>character varying(500)</td><td></td><td>True</td><td>申請人地址</td></tr>
+<tr><td>applicant_phone</td><td>character varying(100)</td><td></td><td>True</td><td>申請人電話</td></tr>
+<tr><td>applicant_cellphone</td><td>character varying(100)</td><td></td><td>True</td><td>申請人手機</td></tr>
+<tr><td>applicant_fax</td><td>character varying(100)</td><td></td><td>True</td><td>申請人傳真</td></tr>
+<tr><td>applicant_email</td><td>character varying(150)</td><td></td><td>True</td><td>申請人電子郵件</td></tr>
+<tr><td>contract_cleaner</td><td>character varying(150)</td><td></td><td>True</td><td>清潔公司</td></tr>
+<tr><td>id</td><td>integer</td><td>nextval('event_police_religion_id_seq'::regclass)</td><td>False</td><td></td></tr>
+<tr><td>commander_name</td><td>character varying(50)</td><td></td><td>True</td><td>現場總指揮姓名</td></tr>
+<tr><td>commander_phone</td><td>character varying(100)</td><td></td><td>True</td><td>現場總指揮連絡電話</td></tr>
+<tr><td>health_care_provider</td><td>integer</td><td></td><td>True</td><td>自聘醫護人員</td></tr>
+<tr><td>emt</td><td>integer</td><td></td><td>True</td><td>救護技術員（EMT）</td></tr>
+<tr><td>ambulance</td><td>integer</td><td></td><td>True</td><td>救護車數量</td></tr>
+<tr><td>has_professional_firework</td><td>boolean</td><td></td><td>False</td><td>施放專業爆竹煙火</td></tr>
+<tr><td>has_normal_firework</td><td>boolean</td><td></td><td>False</td><td>施放一般爆竹煙火</td></tr>
+<tr><td>normal_firework_type</td><td>integer</td><td></td><td>False</td><td>1.爆炸音類;2.升空類;</td></tr>
+<tr><td>event_id</td><td>integer</td><td></td><td>False</td><td>活動通報編號</td></tr>
+<tr><td>road_used_start_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>申請使用道路開始時間</td></tr>
+<tr><td>road_used_end_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>申請使用道路結束時間</td></tr>
+<tr><td>road_used_details</td><td>text</td><td></td><td>True</td><td>申請使用道路明細</td></tr>
+<tr><td>visit_temples</td><td>text</td><td></td><td>True</td><td>參拜宮廟</td></tr>
+<tr><td>join_temples</td><td>text</td><td></td><td>True</td><td>參與宮廟</td></tr>
+<tr><td>traffic_guidance</td><td>text</td><td></td><td>True</td><td>交通疏導人員</td></tr>
+<tr><td>guards</td><td>text</td><td></td><td>True</td><td>安全維護人員</td></tr>
+<tr><td>environment_maintenance</td><td>text</td><td></td><td>True</td><td>清潔維護人員</td></tr>
+<tr><td>medical_staff</td><td>text</td><td></td><td>True</td><td>醫護人員</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>event_police_sports</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('event_police_sports_id_seq'::regclass)</td><td>False</td><td></td></tr>
+<tr><td>organizer</td><td>character varying(150)</td><td></td><td>False</td><td>申請/主辦單位名稱</td></tr>
+<tr><td>organizer_address</td><td>character varying(500)</td><td></td><td>True</td><td>單位地址</td></tr>
+<tr><td>organizer_phone</td><td>character varying(100)</td><td></td><td>True</td><td>單位電話</td></tr>
+<tr><td>organizer_fax</td><td>character varying(100)</td><td></td><td>True</td><td>單位傳真</td></tr>
+<tr><td>owner_name</td><td>character varying(50)</td><td></td><td>True</td><td>負責人姓名</td></tr>
+<tr><td>owner_birthday</td><td>timestamp without time zone</td><td></td><td>True</td><td>負責人生日</td></tr>
+<tr><td>owner_identity_number</td><td>character varying(50)</td><td></td><td>True</td><td>國民身分證統一編號</td></tr>
+<tr><td>owner_address</td><td>character varying(500)</td><td></td><td>True</td><td>負責人地址</td></tr>
+<tr><td>owner_phone</td><td>character varying(100)</td><td></td><td>True</td><td>負責人電話</td></tr>
+<tr><td>owner_cellphone</td><td>character varying(100)</td><td></td><td>True</td><td>負責人手機</td></tr>
+<tr><td>owner_fax</td><td>character varying(100)</td><td></td><td>True</td><td>負責人傳真</td></tr>
+<tr><td>applicant_name</td><td>character varying(50)</td><td></td><td>True</td><td>申請人姓名</td></tr>
+<tr><td>applicant_address</td><td>character varying(500)</td><td></td><td>True</td><td>申請人地址</td></tr>
+<tr><td>applicant_phone</td><td>character varying(100)</td><td></td><td>True</td><td>申請人電話</td></tr>
+<tr><td>applicant_cellphone</td><td>character varying(100)</td><td></td><td>True</td><td>申請人手機</td></tr>
+<tr><td>applicant_fax</td><td>character varying(100)</td><td></td><td>True</td><td>申請人傳真</td></tr>
+<tr><td>applicant_email</td><td>character varying(150)</td><td></td><td>True</td><td>申請人電子郵件</td></tr>
+<tr><td>normal_parking_space_number</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>bus_parking_space_number</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>bus_stop_announcement_road1</td><td>character varying(100)</td><td></td><td>True</td><td>交通維持宣傳-活動前公車張貼路段1</td></tr>
+<tr><td>bus_stop_announcement_road2</td><td>character varying(100)</td><td></td><td>True</td><td>交通維持宣傳-活動前公車張貼路段2</td></tr>
+<tr><td>no_parking_announcement_road1</td><td>character varying(100)</td><td></td><td>True</td><td>交通維持宣傳-活動前禁止停車張貼路段1</td></tr>
+<tr><td>no_parking_announcement_road2</td><td>character varying(100)</td><td></td><td>True</td><td>交通維持宣傳-活動前禁止停車張貼路段2</td></tr>
+<tr><td>contract_cleaner</td><td>character varying(150)</td><td></td><td>True</td><td>清潔公司</td></tr>
+<tr><td>first_aid_station</td><td>integer</td><td></td><td>True</td><td>救護服務站數量</td></tr>
+<tr><td>health_care_provider</td><td>integer</td><td></td><td>True</td><td>自聘醫護人員</td></tr>
+<tr><td>emt</td><td>integer</td><td></td><td>True</td><td>救護技術員（EMT）</td></tr>
+<tr><td>ambulance</td><td>integer</td><td></td><td>True</td><td>救護車數量</td></tr>
+<tr><td>participant_number</td><td>integer</td><td></td><td>True</td><td>參加人數</td></tr>
+<tr><td>event_id</td><td>integer</td><td></td><td>False</td><td>活動通報編號</td></tr>
+<tr><td>rear_bus_license_plate</td><td>character varying(15)</td><td></td><td>True</td><td>活動收容車車牌</td></tr>
+<tr><td>road_used_start_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>申請使用道路開始時間</td></tr>
+<tr><td>road_used_end_at</td><td>timestamp without time zone</td><td></td><td>False</td><td>申請使用道路結束時間</td></tr>
+<tr><td>road_used_details</td><td>text</td><td></td><td>True</td><td>申請使用道路明細</td></tr>
+<tr><td>guide_staffs</td><td>text</td><td></td><td>True</td><td>重要路口疏導、指揮人員</td></tr>
+<tr><td>environment_maintenance</td><td>text</td><td></td><td>True</td><td>清潔維護人員</td></tr>
+<tr><td>medical_staff</td><td>text</td><td></td><td>True</td><td>醫護人員</td></tr>
+<tr><td>road_controller_signs</td><td>text</td><td></td><td>True</td><td>道路管制牌面範例</td></tr>
+<tr><td>parking_space_signs</td><td>text</td><td></td><td>True</td><td>停車場導引牌面範例</td></tr>
+<tr><td>government_application_document_id</td><td>character varying(250)</td><td></td><td>True</td><td>檢附養工處/公路總局道路使用同意函文</td></tr>
+<tr><td>government_application_document_name</td><td>character varying(150)</td><td></td><td>True</td><td>檢附養工處/公路總局道路使用同意函文</td></tr>
+<tr><td>traffic_control_file_id</td><td>character varying(250)</td><td></td><td>True</td><td>交通管制設施設置稿</td></tr>
+<tr><td>traffic_control_file_name</td><td>character varying(150)</td><td></td><td>True</td><td>交通管制設施設置稿</td></tr>
+<tr><td>announcement_image_file_id</td><td>character varying(250)</td><td></td><td>True</td><td>宣導圖檔稿</td></tr>
+<tr><td>announcement_image_file_name</td><td>character varying(150)</td><td></td><td>True</td><td>宣導圖檔稿</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>geography_columns</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>f_table_catalog</td><td>name</td><td></td><td>True</td><td></td></tr>
+<tr><td>f_table_schema</td><td>name</td><td></td><td>True</td><td></td></tr>
+<tr><td>f_table_name</td><td>name</td><td></td><td>True</td><td></td></tr>
+<tr><td>f_geography_column</td><td>name</td><td></td><td>True</td><td></td></tr>
+<tr><td>coord_dimension</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>srid</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>type</td><td>text</td><td></td><td>True</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>geometry_columns</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>f_table_catalog</td><td>character varying(256)</td><td></td><td>True</td><td></td></tr>
+<tr><td>f_table_schema</td><td>name</td><td></td><td>True</td><td></td></tr>
+<tr><td>f_table_name</td><td>name</td><td></td><td>True</td><td></td></tr>
+<tr><td>f_geometry_column</td><td>name</td><td></td><td>True</td><td></td></tr>
+<tr><td>coord_dimension</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>srid</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>type</td><td>character varying(30)</td><td></td><td>True</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>gov_authority</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>character varying</td><td></td><td>False</td><td>機關代碼</td></tr>
+<tr><td>code</td><td>character varying</td><td></td><td>True</td><td>機關簡碼</td></tr>
+<tr><td>name</td><td>character varying</td><td></td><td>True</td><td>機關名稱</td></tr>
+<tr><td>phone</td><td>character varying</td><td></td><td>True</td><td>機關電話</td></tr>
+<tr><td>email</td><td>character varying</td><td></td><td>True</td><td>機關電子信箱</td></tr>
+<tr><td>url</td><td>character varying</td><td></td><td>True</td><td>機關網址連結</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>manage_area</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('manage_area_id_seq'::regclass)</td><td>False</td><td>區域代碼</td></tr>
+<tr><td>name</td><td>character varying</td><td></td><td>True</td><td>區域名稱</td></tr>
+<tr><td>is_delete</td><td>boolean</td><td>false</td><td>False</td><td>是否刪除</td></tr>
+<tr><td>is_enable</td><td>boolean</td><td>true</td><td>False</td><td>是否啟用</td></tr>
+<tr><td>sort</td><td>integer</td><td></td><td>True</td><td>排序</td></tr>
+<tr><td>create_time</td><td>timestamp without time zone</td><td>now()</td><td>False</td><td>建立時間</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>manage_dep</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('manage_dep_id_seq'::regclass)</td><td>False</td><td>機關代碼</td></tr>
+<tr><td>name</td><td>character varying</td><td></td><td>True</td><td>機關名稱</td></tr>
+<tr><td>is_delete</td><td>boolean</td><td>false</td><td>False</td><td>是否刪除</td></tr>
+<tr><td>is_enable</td><td>boolean</td><td>true</td><td>False</td><td>是否啟用</td></tr>
+<tr><td>create_time</td><td>timestamp without time zone</td><td>now()</td><td>False</td><td>建立時間</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>manage_unit</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('manage_unit_id_seq'::regclass)</td><td>False</td><td>單位代碼</td></tr>
+<tr><td>name</td><td>character varying</td><td></td><td>True</td><td>單位名稱</td></tr>
+<tr><td>is_delete</td><td>boolean</td><td>false</td><td>False</td><td>是否刪除</td></tr>
+<tr><td>is_enable</td><td>boolean</td><td>true</td><td>False</td><td>是否啟用</td></tr>
+<tr><td>create_time</td><td>timestamp without time zone</td><td>now()</td><td>False</td><td>建立時間</td></tr>
+<tr><td>manage_dep_id</td><td>integer</td><td></td><td>False</td><td>機構代碼</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>manage_unit_area</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>manage_unit_id</td><td>integer</td><td></td><td>False</td><td></td></tr>
+<tr><td>manage_area_id</td><td>integer</td><td></td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>message</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('message_id_seq'::regclass)</td><td>False</td><td>訊息代碼</td></tr>
+<tr><td>category_id</td><td>integer</td><td></td><td>False</td><td>訊息類別</td></tr>
+<tr><td>title</td><td>character varying</td><td></td><td>True</td><td>標題</td></tr>
+<tr><td>content</td><td>character varying</td><td></td><td>True</td><td>內容</td></tr>
+<tr><td>publish_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>發表時間</td></tr>
+<tr><td>create_time</td><td>timestamp without time zone</td><td>now()</td><td>True</td><td>建立時間</td></tr>
+<tr><td>create_user</td><td>uuid</td><td></td><td>True</td><td>建立人</td></tr>
+<tr><td>modify_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>修改時間</td></tr>
+<tr><td>modify_user</td><td>uuid</td><td></td><td>True</td><td>修改人</td></tr>
+<tr><td>is_enable</td><td>boolean</td><td>true</td><td>False</td><td>是否啟用</td></tr>
+<tr><td>is_delete</td><td>boolean</td><td>false</td><td>False</td><td>是否刪除</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>message_category</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('message_category_id_seq'::regclass)</td><td>False</td><td></td></tr>
+<tr><td>name</td><td>character varying</td><td></td><td>True</td><td>類別名稱</td></tr>
+<tr><td>order</td><td>integer</td><td>0</td><td>False</td><td>排序</td></tr>
+<tr><td>main_category_id</td><td>integer</td><td></td><td>True</td><td>主類別代碼</td></tr>
+<tr><td>is_enable</td><td>boolean</td><td>true</td><td>False</td><td>是否啟用</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>record_standard_column_changed</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>changed_date</td><td>timestamp without time zone</td><td>now()</td><td>False</td><td>變更時間</td></tr>
+<tr><td>data_source</td><td>character varying(100)</td><td></td><td>False</td><td>資料來源</td></tr>
+<tr><td>columns</td><td>character varying</td><td></td><td>True</td><td>欄位</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>related_link</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('relatedlink_id_seq'::regclass)</td><td>False</td><td>索引</td></tr>
+<tr><td>category_id</td><td>integer</td><td></td><td>False</td><td>RelatedLinkCategory 索引</td></tr>
+<tr><td>title</td><td>character varying(250)</td><td></td><td>True</td><td>標題</td></tr>
+<tr><td>link</td><td>character varying(300)</td><td></td><td>True</td><td>連結網址</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>related_link_category</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td>nextval('relatedlinkcategory_id_seq'::regclass)</td><td>False</td><td>索引</td></tr>
+<tr><td>name</td><td>character varying(200)</td><td></td><td>False</td><td>分類名稱</td></tr>
+<tr><td>order</td><td>integer</td><td>0</td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>report_standard_data</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>data_source</td><td>character varying(100)</td><td></td><td>False</td><td>資料來源</td></tr>
+<tr><td>report_year</td><td>integer</td><td></td><td>False</td><td>報表年分</td></tr>
+<tr><td>report_month</td><td>integer</td><td></td><td>False</td><td>報表月份</td></tr>
+<tr><td>data_count</td><td>integer</td><td></td><td>False</td><td>此月份資料筆數</td></tr>
+<tr><td>connect_success</td><td>integer</td><td></td><td>False</td><td>連接來源成功次數</td></tr>
+<tr><td>connect_fail</td><td>integer</td><td></td><td>False</td><td>連接來源失敗次數</td></tr>
+<tr><td>connect_comparison</td><td>numeric</td><td></td><td>False</td><td>連接來源成功率與上個月相比</td></tr>
+<tr><td>format_exception_count</td><td>integer</td><td></td><td>False</td><td>資料格式異常次數</td></tr>
+<tr><td>data_check_success</td><td>integer</td><td></td><td>False</td><td>資料欄位完整數</td></tr>
+<tr><td>data_check_fail</td><td>integer</td><td></td><td>False</td><td>資料欄位不完整數</td></tr>
+<tr><td>data_check_comparison</td><td>numeric</td><td></td><td>False</td><td>資料來源完整與上個月相比</td></tr>
+<tr><td>data_gis_success</td><td>integer</td><td></td><td>False</td><td>資料有GIS資料數</td></tr>
+<tr><td>data_gis_fail</td><td>integer</td><td></td><td>False</td><td>資料沒有GIS資料數</td></tr>
+<tr><td>data_gis_comparison</td><td>numeric</td><td></td><td>False</td><td>資料有GIS與上個月相比</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>road_event_standard</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>event_type</td><td>integer</td><td></td><td>True</td><td>事件類型</td></tr>
+<tr><td>id</td><td>character varying</td><td></td><td>False</td><td>統一識別碼</td></tr>
+<tr><td>original_id</td><td>character varying</td><td></td><td>True</td><td>原單位識別碼</td></tr>
+<tr><td>version</td><td>integer</td><td></td><td>True</td><td>事件紀錄版本</td></tr>
+<tr><td>authority_id</td><td>character varying</td><td></td><td>True</td><td>業管機關代號</td></tr>
+<tr><td>authority_code</td><td>character varying</td><td></td><td>True</td><td>業管機關簡碼</td></tr>
+<tr><td>authority_name</td><td>character varying</td><td></td><td>True</td><td>業管機關名稱</td></tr>
+<tr><td>authority_phone</td><td>character varying</td><td></td><td>True</td><td>業管機關連絡電話</td></tr>
+<tr><td>authority_email</td><td>character varying</td><td></td><td>True</td><td>業管機關電子信箱</td></tr>
+<tr><td>authority_url</td><td>character varying</td><td></td><td>True</td><td>業管機關網址連結</td></tr>
+<tr><td>observation_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 發現時間紀錄</td></tr>
+<tr><td>expected_start_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 預期開始時間</td></tr>
+<tr><td>expected_end_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 預期結束時間</td></tr>
+<tr><td>actual_start_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 實際開始時間</td></tr>
+<tr><td>actual_end_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 實際結束時間</td></tr>
+<tr><td>start_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 開始時間</td></tr>
+<tr><td>end_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 結束時間</td></tr>
+<tr><td>version_update_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>TimeDataType - 資料版本更新時間</td></tr>
+<tr><td>gis_area</td><td>USER-DEFINED</td><td></td><td>True</td><td>LocationRefDataType - GeoJson空間描述</td></tr>
+<tr><td>feature_type</td><td>integer</td><td></td><td>True</td><td>LocationRefDataType - 位置特徵屬性</td></tr>
+<tr><td>reference_type</td><td>integer</td><td></td><td>True</td><td>LocationRefDataType - 參照類型</td></tr>
+<tr><td>location_description</td><td>character varying</td><td></td><td>True</td><td>LocationRefDataType - 位置說明</td></tr>
+<tr><td>road_linear_reference</td><td>integer</td><td></td><td>True</td><td>LocationRefDataType - 道路線型參照(區間狀態)</td></tr>
+<tr><td>title</td><td>character varying</td><td></td><td>True</td><td>RecordDataType - 事件標題</td></tr>
+<tr><td>description</td><td>character varying</td><td></td><td>True</td><td>RecordDataType - 內容描述</td></tr>
+<tr><td>severity</td><td>integer</td><td></td><td>True</td><td>RecordDataType - 嚴重程度</td></tr>
+<tr><td>advice</td><td>character varying</td><td></td><td>True</td><td>RecordDataType - 用路人建議描述</td></tr>
+<tr><td>impact_gis_area</td><td>USER-DEFINED</td><td></td><td>True</td><td>ImpactDataType - 影響範圍之空間座標描述</td></tr>
+<tr><td>impact_description</td><td>character varying</td><td></td><td>True</td><td>ImpactDataType - 影響狀態描述</td></tr>
+<tr><td>impact_road_name</td><td>character varying</td><td></td><td>True</td><td>ImpactDataType - 影響道路名稱</td></tr>
+<tr><td>original_number_of_lanes</td><td>integer</td><td></td><td>True</td><td>ImpactDataType - 原正常狀態之車道數量</td></tr>
+<tr><td>restricted_lanes</td><td>integer</td><td></td><td>True</td><td>ImpactDataType - 受阻車道</td></tr>
+<tr><td>note</td><td>character varying</td><td></td><td>True</td><td>ImpactDataType - 額外補充描述</td></tr>
+<tr><td>source</td><td>character varying</td><td></td><td>True</td><td>ResourceDataType - 資料來源</td></tr>
+<tr><td>sub_type</td><td>integer</td><td></td><td>True</td><td>事件子類別代碼</td></tr>
+<tr><td>event_description</td><td>character varying</td><td></td><td>True</td><td>TrafficControlDrescription - 交管描述
+CauseDrescription - 起因描述</td></tr>
+<tr><td>event_ref</td><td>character varying</td><td></td><td>True</td><td>TrafficControlEventRef - 涉及交管事件參照
+CauseEventRef - 起因事件參照</td></tr>
+<tr><td>death_people</td><td>integer</td><td></td><td>True</td><td>死亡人數</td></tr>
+<tr><td>injured_people</td><td>integer</td><td></td><td>True</td><td>受傷人數</td></tr>
+<tr><td>petitioner</td><td>character varying</td><td></td><td>True</td><td>施工申請單位
+活動申請單位</td></tr>
+<tr><td>approval_no</td><td>character varying</td><td></td><td>True</td><td>派工單核准單號
+活動核准單號</td></tr>
+<tr><td>involved_vehicle_motorcycle</td><td>integer</td><td></td><td>True</td><td>機車數</td></tr>
+<tr><td>involved_vehicle_small</td><td>integer</td><td></td><td>True</td><td>小型車輛數</td></tr>
+<tr><td>involved_vehicle_large</td><td>integer</td><td></td><td>True</td><td>大客貨車輛數</td></tr>
+<tr><td>involved_vehicle_trailer</td><td>integer</td><td></td><td>True</td><td>聯結車輛數</td></tr>
+<tr><td>data_source</td><td>character varying</td><td></td><td>True</td><td>資料來源(系統)</td></tr>
+<tr><td>enable_time</td><td>timestamp without time zone</td><td></td><td>True</td><td></td></tr>
+<tr><td>disable_time</td><td>timestamp without time zone</td><td></td><td>True</td><td></td></tr>
+<tr><td>is_enable</td><td>boolean</td><td>(1)::boolean</td><td>False</td><td>是否啟用</td></tr>
+<tr><td>link_id</td><td>character varying</td><td></td><td>True</td><td>基礎道路代號</td></tr>
+<tr><td>bearing</td><td>integer</td><td></td><td>True</td><td>基礎路段方位</td></tr>
+<tr><td>road_direction</td><td>integer</td><td></td><td>True</td><td>基礎路段所屬道路方向</td></tr>
+<tr><td>road_id</td><td>character varying</td><td></td><td>True</td><td>道路代號</td></tr>
+<tr><td>road_name</td><td>character varying</td><td></td><td>True</td><td>道路名稱</td></tr>
+<tr><td>road_class</td><td>character varying</td><td></td><td>True</td><td>道路分類</td></tr>
+<tr><td>ext_json</td><td>jsonb</td><td></td><td>True</td><td>不在標準資料的額外欄位</td></tr>
+<tr><td>create_time</td><td>timestamp without time zone</td><td>now()</td><td>True</td><td>資料建立時間</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>road_event_standard_attachment</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>standard_id</td><td>character varying</td><td></td><td>False</td><td>標準格式 - 統一識別碼</td></tr>
+<tr><td>url_link_type</td><td>integer</td><td></td><td>True</td><td>附件類型</td></tr>
+<tr><td>url_link_address</td><td>character varying</td><td></td><td>True</td><td>附件位置</td></tr>
+<tr><td>url_link_description</td><td>character varying</td><td></td><td>True</td><td>附件描述</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>road_event_standard_relative_notice</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>standard_id</td><td>character varying</td><td></td><td>False</td><td>標準資料 - 統一識別碼</td></tr>
+<tr><td>id</td><td>uuid</td><td></td><td>False</td><td>通知代碼</td></tr>
+<tr><td>notice</td><td>character varying</td><td></td><td>True</td><td>RelativeNoticeDataType - 通知訊息</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>road_event_standard_relative_notice_target</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>standard_id</td><td>character varying</td><td></td><td>False</td><td>標準資料 - 統一識別碼</td></tr>
+<tr><td>notice_id</td><td>uuid</td><td></td><td>False</td><td>通知代碼</td></tr>
+<tr><td>authority_id</td><td>character varying</td><td></td><td>False</td><td>AuthorityDataType - 業管機關代號</td></tr>
+<tr><td>authority_code</td><td>character varying</td><td></td><td>True</td><td>AuthorityDataType - 業管機關簡碼</td></tr>
+<tr><td>authority_name</td><td>character varying</td><td></td><td>True</td><td>AuthorityDataType - 業管機關名稱</td></tr>
+<tr><td>authority_phone</td><td>character(1)</td><td></td><td>True</td><td>AuthorityDataType - 業管機關連絡電話</td></tr>
+<tr><td>authority_email</td><td>character(1)</td><td></td><td>True</td><td>AuthorityDataType - 業管機關電子信箱</td></tr>
+<tr><td>authority_url</td><td>character varying</td><td></td><td>True</td><td>AuthorityDataType - 業管機關網址連結</td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>road_limit</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>integer</td><td></td><td>False</td><td></td></tr>
+<tr><td>name</td><td>character varying</td><td></td><td>True</td><td></td></tr>
+<tr><td>region</td><td>character varying</td><td></td><td>True</td><td></td></tr>
+<tr><td>cut_line</td><td>character varying</td><td></td><td>True</td><td></td></tr>
+<tr><td>car_type</td><td>character varying</td><td></td><td>True</td><td></td></tr>
+<tr><td>limit_type</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>sub_type</td><td>integer</td><td></td><td>True</td><td></td></tr>
+<tr><td>gis_data</td><td>USER-DEFINED</td><td></td><td>True</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>seq_no</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>key</td><td>character varying(100)</td><td></td><td>False</td><td></td></tr>
+<tr><td>value</td><td>integer</td><td></td><td>False</td><td></td></tr>
+</table></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content = "ie=edge">
+    <title>IotRoadEventNetwork Table Schema</title>
+</head>
+<body>
+<h1>web_road_event</h1>
+<table border="1" width="100%">
+<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>
+<tr><td>id</td><td>uuid</td><td></td><td>False</td><td>代碼</td></tr>
+<tr><td>event_type</td><td>integer</td><td>0</td><td>False</td><td>事件類別</td></tr>
+<tr><td>title</td><td>character varying</td><td></td><td>True</td><td>事件標題</td></tr>
+<tr><td>description</td><td>character varying</td><td></td><td>True</td><td>事件描述</td></tr>
+<tr><td>feature_type</td><td>integer</td><td></td><td>False</td><td>位置描述 - 特徵屬性</td></tr>
+<tr><td>reference_type</td><td>integer</td><td></td><td>False</td><td>位置描述 - 參照類型</td></tr>
+<tr><td>county</td><td>character varying(10)</td><td></td><td>True</td><td>位置描述 - 縣市</td></tr>
+<tr><td>town</td><td>character varying(10)</td><td></td><td>True</td><td>位置描述 - 行政區</td></tr>
+<tr><td>road</td><td>character varying</td><td></td><td>True</td><td>位置描述 - 道路</td></tr>
+<tr><td>road2</td><td>character varying</td><td></td><td>True</td><td>位置描述 - 道路2(交叉路口)</td></tr>
+<tr><td>milepost</td><td>character varying(20)</td><td></td><td>True</td><td>位置描述 - 里程數</td></tr>
+<tr><td>milepost2</td><td>character varying(20)</td><td></td><td>True</td><td>位置描述 - 里程數2</td></tr>
+<tr><td>landmark</td><td>character varying(100)</td><td></td><td>True</td><td>位置描述 - 地標</td></tr>
+<tr><td>start_time</td><td>timestamp without time zone</td><td></td><td>False</td><td>起始時間</td></tr>
+<tr><td>end_time</td><td>timestamp without time zone</td><td></td><td>True</td><td>結束時間</td></tr>
+<tr><td>address</td><td>character varying(100)</td><td></td><td>True</td><td>地址(巷弄號)</td></tr>
+<tr><td>expressway_type</td><td>character varying(100)</td><td></td><td>True</td><td>快速道路類型</td></tr>
+<tr><td>geo_json</td><td>character varying</td><td></td><td>True</td><td>geo json</td></tr>
+<tr><td>county_name</td><td>character varying(20)</td><td></td><td>True</td><td>縣市</td></tr>
+<tr><td>town_name</td><td>character varying(20)</td><td></td><td>True</td><td>鄉鎮區</td></tr>
+<tr><td>direction</td><td>character varying(5)</td><td></td><td>True</td><td>方位</td></tr>
+<tr><td>expressway</td><td>character varying(10)</td><td></td><td>True</td><td>快速道路</td></tr>
+<tr><td>expressway_name</td><td>character varying(50)</td><td></td><td>True</td><td>快速道路名稱</td></tr>
+</table></body></html>

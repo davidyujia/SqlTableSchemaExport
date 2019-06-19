@@ -1,0 +1,38 @@
+@model DbSchemaExporter.Core.DbInfoModel
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="" X-UA-Compatible content="" ie="edge">
+    <title>@Model.Name Table Schema</title>
+</head>
+
+<body>
+@foreach(var tableInfo in Model.Tables)
+{    
+    <h1>@tableInfo.Name</h1>
+    <table style="border: 1px" width="100%">
+        <tr>
+            <th>欄位名稱</th>
+            <th>資料型態</th>
+            <th>預設值</th>
+            <th>允許NULL</th>
+            <th>描述</th>
+        </tr>
+        @foreach(var columnInfo in tableInfo.Columns)
+        {
+            <tr>
+                <td>@columnInfo.Name</td>
+                <td>@columnInfo.Type</td>
+                <td>@columnInfo.DefaultValue</td>
+                <td>@columnInfo.IsCanNull</td>
+                <td>@columnInfo.Comment</td>
+            </tr>
+        }
+    </table>
+}
+</body>
+
+<body>
