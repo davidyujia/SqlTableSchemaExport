@@ -7,7 +7,7 @@ A MSSQL table schema exporter
 
  `-h` **Help**
 
- `-t` **Database Type**, it must be "mssql" or "pqsql"
+ `-t` **Database Type**, it must be "mssql", "mysql" or "pqsql".
 
  `-s` **Server name or IP address**
 
