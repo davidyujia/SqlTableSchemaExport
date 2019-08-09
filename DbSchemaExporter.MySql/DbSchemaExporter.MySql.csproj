@@ -5,11 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.*" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DbSchemaExporter.Core\DbSchemaExporter.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.17" />
+  </ItemGroup>
 </Project>
