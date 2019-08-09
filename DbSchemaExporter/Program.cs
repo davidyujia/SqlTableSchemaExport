@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.IO;
-using System.Text;
 using DbSchemaExporter.Core;
 using DbSchemaExporter.MsSql;
+using DbSchemaExporter.MySql;
 using DbSchemaExporter.Postgresql;
 
 namespace DbSchemaExporter
@@ -14,6 +12,7 @@ namespace DbSchemaExporter
     {
         const string _postgreSql = "pgsql";
         const string _msSql = "mssql";
+        const string _mySql = "mysql";
 
         static void Main(string[] args)
         {
@@ -27,7 +26,7 @@ namespace DbSchemaExporter
 
                 var setting = new DatabaseSettingModel
                 {
-                    DbType = GetSwitchInput(argList, "-t", "Database Type:\n1. SQL Server\n2. PostgreSQL", new Dictionary<string, string> { { "1", _msSql }, { "2", _postgreSql } }),
+                    DbType = GetSwitchInput(argList, "-t", "Database Type:\n1. SQL Server\n2. MySQL\n3. PostgreSQL", new Dictionary<string, string> { { "1", _msSql }, { "2", _mySql }, { "3", _postgreSql } }),
                     Host = GetInput(argList, "-s", "Server name or IP address:"),
                     DatabaseName = GetInput(argList, "-d", "Database name:"),
                     UserName = GetInput(argList, "-u", "Username:"),
@@ -40,6 +39,9 @@ namespace DbSchemaExporter
                 {
                     case _msSql:
                         service = new MsSqlService();
+                        break;
+                    case _mySql:
+                        service = new MySqlService();
                         break;
                     case _postgreSql:
                         service = new PostgresqlService();
