@@ -20,10 +20,10 @@ namespace DbSchemaExporter.Postgresql
                 connection.Open();
 
                 #region SqlCommandString
-                var sqlCommandString = @"SELECT col.table_catalog, col.table_schema,col.table_name, col.column_name, col.column_default, col.is_nullable, col.data_type,  col.character_maximum_length, g.description
+                var sqlCommandString = @"SELECT obj_description(g.OID) as table_comment, col.table_catalog, col.table_schema,col.table_name, col.column_name, col.column_default, col.is_nullable, col.data_type,  col.character_maximum_length, g.description
 FROM information_schema.columns AS col
 
-LEFT JOIN (SELECT c.relname AS table_name, a.attname As column_name,  d.description
+LEFT JOIN (SELECT c.OID, c.relname AS table_name, a.attname As column_name,  d.description
    FROM pg_class As c
     INNER JOIN pg_attribute As a ON c.oid = a.attrelid
    LEFT JOIN pg_namespace n ON n.oid = c.relnamespace
@@ -33,9 +33,9 @@ LEFT JOIN (SELECT c.relname AS table_name, a.attname As column_name,  d.descript
    ORDER BY n.nspname, c.relname, a.attname) AS g ON col.table_name = g.table_name AND col.column_name = g.column_name
 
 WHERE table_schema NOT IN ('information_schema' , 'pg_catalog' ,'topology')
-AND table_catalog = @dbname
+AND table_catalog = 'dbmap'
 AND col.table_name NOT IN ('raster_overviews','raster_columns','spatial_ref_sys')
-ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC;";
+ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC";
 
                 #endregion
                 var command = connection.CreateCommand();
@@ -67,6 +67,7 @@ ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC;";
             {
                 var schema = Convert.ToString(row["table_schema"]);
                 var table = schema == "public" ? Convert.ToString(row["table_name"]) : $"{schema}.{Convert.ToString(row["table_name"])}";
+                var tableComment = Convert.ToString(row["table_comment"]);
                 var column = Convert.ToString(row["column_name"]);
                 var dataType = Convert.ToString(row["data_type"]);
                 var lengthX = row["character_maximum_length"] == DBNull.Value ? 0 : Convert.ToInt32(row["character_maximum_length"]);
@@ -81,7 +82,7 @@ ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC;";
                     {
                         result.Add(new TableInfoWithColumnsModel(tableModel, columnInfos));
                     }
-                    tableModel = new TableInfoModel { Name = table };
+                    tableModel = new TableInfoModel { Name = table, Comment = tableComment };
                     columnInfos = new List<ColumnInfoModel>();
                 }
 

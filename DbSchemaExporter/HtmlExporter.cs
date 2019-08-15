@@ -27,7 +27,8 @@ namespace DbSchemaExporter
     <title>{setting.DatabaseName} Table Schema</title>
 </head>
 <body>");
-                sb.AppendLine($"<h1>{tableInfo.Name}</h1>");
+                var comment = string.IsNullOrWhiteSpace(tableInfo.Comment) ? string.Empty : $"<h4>{tableInfo.Comment}</h4>";
+                sb.AppendLine($"<h1>{tableInfo.Name}</h1>{comment}");
                 sb.AppendLine(@"<table border=""1"" width=""100%"">");
                 sb.AppendLine("<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>");
 
