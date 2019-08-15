@@ -27,7 +27,7 @@ namespace DbSchemaExporter
                 var setting = new DatabaseSettingModel
                 {
                     DbType = GetSwitchInput(argList, "-t", "Database Type:\n1. SQL Server\n2. MySQL\n3. PostgreSQL", new Dictionary<string, string> { { "1", _msSql }, { "2", _mySql }, { "3", _postgreSql } }),
-                    Host = GetInput(argList, "-s", "Server name or IP address:"),
+                    HostString = GetInput(argList, "-s", "Server name or IP address:"),
                     DatabaseName = GetInput(argList, "-d", "Database name:"),
                     UserName = GetInput(argList, "-u", "Username:"),
                     Password = GetInput(argList, "-p", "Password:", true)
@@ -38,12 +38,15 @@ namespace DbSchemaExporter
                 switch (setting.DbType.ToLower())
                 {
                     case _msSql:
+                        setting.SetDefaultPort(1433);
                         service = new MsSqlService();
                         break;
                     case _mySql:
+                        setting.SetDefaultPort(3306);
                         service = new MySqlService();
                         break;
                     case _postgreSql:
+                        setting.SetDefaultPort(5432);
                         service = new PostgresqlService();
                         break;
                 }

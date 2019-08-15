@@ -16,7 +16,7 @@ namespace DbSchemaExporter.Postgresql
             NpgsqlConnection connection = null;
             try
             {
-                connection = new NpgsqlConnection($"Host={settingModel.Host};Database={settingModel.DatabaseName};Username={settingModel.UserName};Password={settingModel.Password};");
+                connection = new NpgsqlConnection($"Host={settingModel.Host};Port={settingModel.Port};Database={settingModel.DatabaseName};Username={settingModel.UserName};Password={settingModel.Password};");
                 connection.Open();
 
                 #region SqlCommandString
