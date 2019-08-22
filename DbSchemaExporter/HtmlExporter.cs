@@ -15,9 +15,7 @@ namespace DbSchemaExporter
         public Stream Export(DatabaseSettingModel setting, IEnumerable<TableInfoWithColumnsModel> tableInfos)
         {
             var sb = new StringBuilder();
-            foreach (var tableInfo in tableInfos)
-            {
-                sb.AppendLine($@"
+            sb.AppendLine($@"
 <!DOCTYPE html>
 <html lang=""en"">
 <head>
@@ -27,6 +25,17 @@ namespace DbSchemaExporter
     <title>{setting.DatabaseName} Table Schema</title>
 </head>
 <body>");
+            var isFirst = true;
+            foreach (var tableInfo in tableInfos)
+            {
+                if (isFirst)
+                {
+                    isFirst = false;
+                }
+                else
+                {
+                    sb.Append("</table>");
+                }
                 var comment = string.IsNullOrWhiteSpace(tableInfo.Comment) ? string.Empty : $"<h4>{tableInfo.Comment}</h4>";
                 sb.AppendLine($"<h1>{tableInfo.Name}</h1>{comment}");
                 sb.AppendLine(@"<table border=""1"" width=""100%"">");
@@ -37,8 +46,8 @@ namespace DbSchemaExporter
                     sb.AppendLine($"<tr><td>{columnInfo.Name}</td><td>{columnInfo.Type}</td><td>{columnInfo.DefaultValue}</td><td>{columnInfo.IsCanNull}</td><td>{columnInfo.Comment}</td></tr>");
                 }
 
-                sb.Append("</table></body></html>");
             }
+            sb.Append("</table></body></html>");
             var byteArray = Encoding.UTF8.GetBytes(sb.ToString());
 
             return new MemoryStream(byteArray);
