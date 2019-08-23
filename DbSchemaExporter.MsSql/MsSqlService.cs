@@ -15,7 +15,9 @@ namespace DbSchemaExporter.MsSql
             SqlConnection connection = null;
             try
             {
-                connection = new SqlConnection($"Data Source={settingModel.Host},{settingModel.Port};Initial Catalog={settingModel.DatabaseName};Persist Security Info=True;User ID={settingModel.UserName};Password={settingModel.Password}");
+                connection = new SqlConnection(
+                    settingModel.HasConnectionString ? settingModel.ConnectionString :
+                    $"Data Source={settingModel.Host},{settingModel.Port};Initial Catalog={settingModel.DatabaseName};Persist Security Info=True;User ID={settingModel.UserName};Password={settingModel.Password}");
                 connection.Open();
 
                 #region SqlCommandString

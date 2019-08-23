@@ -16,11 +16,15 @@ namespace DbSchemaExporter.Postgresql
             NpgsqlConnection connection = null;
             try
             {
-                connection = new NpgsqlConnection($"Host={settingModel.Host};Port={settingModel.Port};Database={settingModel.DatabaseName};Username={settingModel.UserName};Password={settingModel.Password};");
+                connection = new NpgsqlConnection(
+                    settingModel.HasConnectionString ? settingModel.ConnectionString : 
+                    $"Host={settingModel.Host};Port={settingModel.Port};Database={settingModel.DatabaseName};Username={settingModel.UserName};Password={settingModel.Password};");
                 connection.Open();
 
                 #region SqlCommandString
-                var sqlCommandString = @"SELECT obj_description(g.OID) as table_comment, col.table_catalog, col.table_schema,col.table_name, col.column_name, col.column_default, col.is_nullable, col.data_type,  col.character_maximum_length, g.description
+                var sqlCommandString = @"SELECT obj_description(g.OID) as table_comment, col.table_catalog, col.table_schema,col.table_name, col.column_name, col.column_default, col.is_nullable,
+                CASE WHEN col.data_type = 'USER-DEFINED' THEN col.udt_name ELSE col.data_type END,
+                col.character_maximum_length, g.description
 FROM information_schema.columns AS col
 
 LEFT JOIN (SELECT c.OID, c.relname AS table_name, a.attname As column_name,  d.description

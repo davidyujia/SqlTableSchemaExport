@@ -24,13 +24,18 @@ namespace DbSchemaExporter
                     return;
                 }
 
+                var dbType = GetSwitchInput(argList, "-t", "Database Type:\n1. SQL Server\n2. MySQL\n3. PostgreSQL", new Dictionary<string, string> { { "1", _msSql }, { "2", _mySql }, { "3", _postgreSql } });
+
+                var connectionString = GetInput(argList, "-c", "ConnectionString:", optional: true);
+                var skip = !string.IsNullOrWhiteSpace(connectionString);
                 var setting = new DatabaseSettingModel
                 {
-                    DbType = GetSwitchInput(argList, "-t", "Database Type:\n1. SQL Server\n2. MySQL\n3. PostgreSQL", new Dictionary<string, string> { { "1", _msSql }, { "2", _mySql }, { "3", _postgreSql } }),
-                    HostString = GetInput(argList, "-s", "Server name or IP address:"),
-                    DatabaseName = GetInput(argList, "-d", "Database name:"),
-                    UserName = GetInput(argList, "-u", "Username:"),
-                    Password = GetInput(argList, "-p", "Password:", true)
+                    ConnectionString = connectionString,
+                    DbType = dbType,
+                    HostString = GetInput(argList, "-s", "Server name or IP address:", skip: skip),
+                    DatabaseName = GetInput(argList, "-d", "Database name:", skip: skip && dbType == _msSql),
+                    UserName = GetInput(argList, "-u", "Username:", skip: skip),
+                    Password = GetInput(argList, "-p", "Password:", true, skip: skip)
                 };
 
                 IDatabaseService service = null;
@@ -108,8 +113,13 @@ namespace DbSchemaExporter
             return argList;
         }
 
-        static string GetInput(IDictionary<string, string> args, string key, string infoString, bool hideInput = false)
+        static string GetInput(IDictionary<string, string> args, string key, string infoString, bool hideInput = false, bool optional = false, bool skip = false)
         {
+            if (skip)
+            {
+                return null;
+            }
+
             if (args.ContainsKey(key))
             {
                 return args[key];
@@ -144,7 +154,7 @@ namespace DbSchemaExporter
                 input = Console.ReadLine();
             }
 
-            if (string.IsNullOrEmpty(input))
+            if (!optional && string.IsNullOrEmpty(input))
             {
                 goto again;
             }

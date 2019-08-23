@@ -4,6 +4,14 @@ namespace DbSchemaExporter.Core
 {
     public class DatabaseSettingModel
     {
+        public bool HasConnectionString
+        {
+            get
+            {
+                return !string.IsNullOrWhiteSpace(ConnectionString);
+            }
+        }
+        public string ConnectionString { get; set; }
         public string DbType { get; set; }
         public string Host { get; set; }
         public int Port { get; set; }
@@ -14,6 +22,10 @@ namespace DbSchemaExporter.Core
         {
             set
             {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    return;
+                }
                 var temp = value.Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries);
                 Host = temp[0];
                 Port = 0;

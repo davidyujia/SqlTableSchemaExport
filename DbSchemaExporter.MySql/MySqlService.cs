@@ -14,7 +14,9 @@ namespace DbSchemaExporter.MySql
             MySqlConnection connection = null;
             try
             {
-                connection = new MySqlConnection($"server={settingModel.Host};port={settingModel.Port};database={settingModel.DatabaseName};user id={settingModel.UserName};password={settingModel.Password};charset=utf8;");
+                connection = new MySqlConnection(
+                    settingModel.HasConnectionString ? settingModel.ConnectionString :
+                     $"server={settingModel.Host};port={settingModel.Port};database={settingModel.DatabaseName};user id={settingModel.UserName};password={settingModel.Password};charset=utf8;");
                 connection.Open();
 
                 #region SqlCommandString
