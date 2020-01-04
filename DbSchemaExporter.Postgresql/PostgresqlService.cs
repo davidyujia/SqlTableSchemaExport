@@ -37,7 +37,7 @@ LEFT JOIN (SELECT c.OID, c.relname AS table_name, a.attname As column_name,  d.d
    ORDER BY n.nspname, c.relname, a.attname) AS g ON col.table_name = g.table_name AND col.column_name = g.column_name
 
 WHERE table_schema NOT IN ('information_schema' , 'pg_catalog' ,'topology')
-AND table_catalog = 'dbmap'
+AND table_catalog = @dbname
 AND col.table_name NOT IN ('raster_overviews','raster_columns','spatial_ref_sys')
 ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC";
 
