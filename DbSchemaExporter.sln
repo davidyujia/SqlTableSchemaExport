@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbSchemaExporter.Postgresql
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbSchemaExporter.MySql", "DbSchemaExporter.MySql\DbSchemaExporter.MySql.csproj", "{BC2561B4-794B-43B9-830E-6E8EB3DE6862}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter", "SqlTableSchemaExporter\SqlTableSchemaExporter.csproj", "{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.Core", "SqlTableSchemaExporter.Core\SqlTableSchemaExporter.Core.csproj", "{2D275189-5620-4B80-B7B4-C4D156E209E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{BC2561B4-794B-43B9-830E-6E8EB3DE6862}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC2561B4-794B-43B9-830E-6E8EB3DE6862}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC2561B4-794B-43B9-830E-6E8EB3DE6862}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
