@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.202
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbSchemaExporter", "DbSchemaExporter\DbSchemaExporter.csproj", "{0DB8A66F-213F-4A67-8EC2-BDEE70B9D862}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbSchemaExporter.MsSql", "DbSchemaExporter.MsSql\DbSchemaExporter.MsSql.csproj", "{22FD4717-488C-4AB2-9A82-728D45134352}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbSchemaExporter.Postgresql", "DbSchemaExporter.Postgresql\DbSchemaExporter.Postgresql.csproj", "{2AA565B0-7AF6-4CD2-8E6E-F9B5292A3C14}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbSchemaExporter.MySql", "DbSchemaExporter.MySql\DbSchemaExporter.MySql.csproj", "{BC2561B4-794B-43B9-830E-6E8EB3DE6862}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2AA565B0-7AF6-4CD2-8E6E-F9B5292A3C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AA565B0-7AF6-4CD2-8E6E-F9B5292A3C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AA565B0-7AF6-4CD2-8E6E-F9B5292A3C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2561B4-794B-43B9-830E-6E8EB3DE6862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2561B4-794B-43B9-830E-6E8EB3DE6862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2561B4-794B-43B9-830E-6E8EB3DE6862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2561B4-794B-43B9-830E-6E8EB3DE6862}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
