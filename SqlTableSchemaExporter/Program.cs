@@ -39,9 +39,9 @@ namespace SqlTableSchemaExporter
 
             var tableInfos = service.GetTableSchema(option.ConnectionString);
 
-            var dbName = !string.IsNullOrWhiteSpace(option.DatabaseName) 
-                ? option.DatabaseName 
-                : service.TryGetDbName(option.ConnectionString, out var name) 
+            var dbName = !string.IsNullOrWhiteSpace(option.DatabaseName)
+                ? option.DatabaseName
+                : service.TryGetDbName(option.ConnectionString, out var name)
                 ? name : "Database";
 
             var stream = exportService.Export(dbName, tableInfos);
@@ -68,46 +68,24 @@ namespace SqlTableSchemaExporter
 
         void ExportToFile(Stream stream, string fileName)
         {
-            var (path, main, ext) = GetFileName(fileName);
+            var fi = new FileInfo(fileName);
 
-            var tempFileName = $"{path}{main}.{ext}";
+            var ext = fi.Extension;
+
+            var name = string.IsNullOrWhiteSpace(ext) ? fi.FullName : fi.FullName[..fi.FullName.LastIndexOf(ext)];
+
+            var tempFileName = $"{name}{ext}";
 
             var i = 0;
 
             while (File.Exists(tempFileName))
             {
-                tempFileName = $"{path}{main}({++i}).{ext}";
+                tempFileName = $"{name}({++i}){ext}";
             }
 
             using var fileStream = File.Create(tempFileName);
             stream.Seek(0, SeekOrigin.Begin);
             stream.CopyTo(fileStream);
-        }
-
-        Tuple<string, string, string> GetFileName(string fileName)
-        {
-            var tempFileName = fileName;
-
-            var path = string.Empty;
-
-            var x = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
-                ? tempFileName.LastIndexOf('\\')
-                : tempFileName.LastIndexOf('/');
-
-            if (x != -1)
-            {
-                path = tempFileName[..(x + 1)];
-
-                tempFileName = tempFileName[(x + 1)..];
-            }
-
-            var dotPosition = tempFileName.LastIndexOf('.');
-
-            var main = dotPosition == -1 ? tempFileName : tempFileName[..dotPosition];
-
-            var ext = dotPosition == -1 ? string.Empty : tempFileName[(dotPosition + 1)..];
-
-            return new Tuple<string, string, string>(path, main, ext);
         }
     }
 }
