@@ -35,7 +35,19 @@ namespace SqlTableSchemaExporter
         {
             var service = GetTypeInstances<IDataSourceService>(x => x.DbTypeName(), option.DbType);
 
+            if (service == null)
+            {
+                Console.WriteLine($"Incorrect value: {option.DbType}");
+                return 1;
+            }
+
             var exportService = GetTypeInstances<ITableExportService>(x => x.DefaultFileExtensionName(), option.ExportType);
+
+            if (service == null)
+            {
+                Console.WriteLine($"Incorrect value: {option.ExportType}");
+                return 1;
+            }
 
             var tableInfos = service.GetTableSchema(option.ConnectionString);
 
