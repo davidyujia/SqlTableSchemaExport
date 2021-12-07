@@ -1,22 +1,30 @@
-﻿using System;
+﻿using Npgsql;
+using SqlTableSchemaExporter.Core;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using DbSchemaExporter.Core;
-using Npgsql;
-using NpgsqlTypes;
 
-namespace DbSchemaExporter.Postgresql
+namespace SqlTableSchemaExporter.PostgreSQL
 {
-    public class PostgresqlService : IDatabaseService
+    public class Service : IDataSourceService
     {
-        public IEnumerable<TableInfoWithColumnsModel> GetTableInfos(DatabaseSettingModel settingModel)
+        public string DbTypeName()
+        {
+            return "Npgsql";
+        }
+
+        public IEnumerable<TableInfoModel> GetTableSchema(string connectionString)
         {
             var resultTable = new DataTable();
             NpgsqlConnection connection = null;
             try
             {
-                connection = new NpgsqlConnection($"Host={settingModel.Host};Database={settingModel.DatabaseName};Username={settingModel.UserName};Password={settingModel.Password};");
+                if (!TryGetDbName(connectionString, out var dbName))
+                {
+                    throw new Exception();
+                }
+
+                connection = new NpgsqlConnection(connectionString);
                 connection.Open();
 
                 #region SqlCommandString
@@ -39,11 +47,10 @@ ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC;";
 
                 #endregion
                 var command = connection.CreateCommand();
-                command.CommandTimeout = 120;
-                command.CommandType = System.Data.CommandType.Text;
+                command.CommandType = CommandType.Text;
                 command.CommandText = sqlCommandString;
 
-                command.Parameters.AddWithValue("@dbname", settingModel.DatabaseName);
+                command.Parameters.AddWithValue("@dbname", dbName);
 
                 var adapter = new NpgsqlDataAdapter(command);
 
@@ -59,10 +66,10 @@ ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC;";
                 }
             }
 
-            var result = new List<TableInfoWithColumnsModel>();
+            var result = new List<TableInfoModel>();
 
             TableInfoModel tableModel = null;
-            var columnInfos = new List<ColumnInfoModel>();
+
             foreach (DataRow row in resultTable.Rows)
             {
                 var schema = Convert.ToString(row["table_schema"]);
@@ -79,25 +86,29 @@ ORDER BY col.table_schema ASC, col.table_name ASC, col.ordinal_position ASC;";
                 {
                     if (tableModel != null)
                     {
-                        result.Add(new TableInfoWithColumnsModel(tableModel, columnInfos));
+                        result.Add(tableModel);
                     }
-                    tableModel = new TableInfoModel { Name = table };
-                    columnInfos = new List<ColumnInfoModel>();
+                    tableModel = new TableInfoModel { Name = table, Columns = new List<ColumnInfoModel>() };
                 }
 
-                columnInfos.Add(new ColumnInfoModel
+                tableModel.Columns.Add(new ColumnInfoModel
                 {
                     Name = column,
-                    Type = $"{dataType}{length}",
+                    DataType = $"{dataType}{length}",
                     DefaultValue = defaultValue,
                     IsCanNull = isNull,
                     Comment = description,
                 });
             }
 
-            result.Add(new TableInfoWithColumnsModel(tableModel, columnInfos));
+            result.Add(tableModel);
 
             return result;
+        }
+
+        public bool TryGetDbName(string connectionString, out string dbName)
+        {
+            return Extensions.TryGetDbName(connectionString, "database", out dbName);
         }
     }
 }

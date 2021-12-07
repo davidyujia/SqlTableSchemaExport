@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DbSchemaExporter.Core\DbSchemaExporter.Core.csproj" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Npgsql" Version="4.0.7" />
+    <ProjectReference Include="..\SqlTableSchemaExporter.Core\SqlTableSchemaExporter.Core.csproj" />
   </ItemGroup>
-  
+
 </Project>

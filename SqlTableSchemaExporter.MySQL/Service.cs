@@ -1,27 +1,30 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using SqlTableSchemaExporter.Core;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using DbSchemaExporter.Core;
-using MySql.Data.MySqlClient;
 
-namespace DbSchemaExporter.MySql
+namespace SqlTableSchemaExporter.MySQL
 {
-    public class MySqlService : IDatabaseService
+    public class Service : IDataSourceService
     {
-        public IEnumerable<TableInfoWithColumnsModel> GetTableInfos(DatabaseSettingModel settingModel)
+        public string DbTypeName()
+        {
+            return "MySQL";
+        }
+
+        public IEnumerable<TableInfoModel> GetTableSchema(string connectionString)
         {
             var resultTable = new DataTable();
             MySqlConnection connection = null;
             try
             {
-                var temp = settingModel.Host.Split(new[] { ":" }, StringSplitOptions.RemoveEmptyEntries);
-                var host = temp[0];
-                int port = 3306;
-                if (temp.Length > 1)
+                if (!TryGetDbName(connectionString, out var dbName))
                 {
-                    port = int.Parse(temp[1]);
+                    throw new Exception();
                 }
-                connection = new MySqlConnection($"server={host};port={port};database={settingModel.DatabaseName};user id={settingModel.UserName};password={settingModel.Password};charset=utf8;");
+
+                connection = new MySqlConnection(connectionString);
                 connection.Open();
 
                 #region SqlCommandString
@@ -41,10 +44,9 @@ ORDER BY TABLE_NAME , ORDINAL_POSITION
 
                 #endregion
                 var command = connection.CreateCommand();
-                command.CommandTimeout = 120;
-                command.CommandType = System.Data.CommandType.Text;
+                command.CommandType = CommandType.Text;
                 command.CommandText = sqlCommandString;
-                command.Parameters.AddWithValue("@dbname", settingModel.DatabaseName);
+                command.Parameters.AddWithValue("@dbname", dbName);
 
                 var adapter = new MySqlDataAdapter(command);
 
@@ -60,10 +62,10 @@ ORDER BY TABLE_NAME , ORDINAL_POSITION
                 }
             }
 
-            var result = new List<TableInfoWithColumnsModel>();
+            var result = new List<TableInfoModel>();
 
             TableInfoModel tableModel = null;
-            var columnInfos = new List<ColumnInfoModel>();
+
             foreach (DataRow row in resultTable.Rows)
             {
                 var table = Convert.ToString(row["Table"]);
@@ -79,25 +81,29 @@ ORDER BY TABLE_NAME , ORDINAL_POSITION
                 {
                     if (tableModel != null)
                     {
-                        result.Add(new TableInfoWithColumnsModel(tableModel, columnInfos));
+                        result.Add(tableModel);
                     }
-                    tableModel = new TableInfoModel { Name = table };
-                    columnInfos = new List<ColumnInfoModel>();
+                    tableModel = new TableInfoModel { Name = table, Columns = new List<ColumnInfoModel>() };
                 }
 
-                columnInfos.Add(new ColumnInfoModel
+                tableModel.Columns.Add(new ColumnInfoModel
                 {
                     Name = column,
-                    Type = $"{dataType}{length}",
+                    DataType = $"{dataType}{length}",
                     DefaultValue = defaultValue,
                     IsCanNull = isNull,
                     Comment = description,
                 });
             }
 
-            result.Add(new TableInfoWithColumnsModel(tableModel, columnInfos));
+            result.Add(tableModel);
 
             return result;
+        }
+
+        public bool TryGetDbName(string connectionString, out string dbName)
+        {
+            return Extensions.TryGetDbName(connectionString, "database", out dbName);
         }
     }
 }

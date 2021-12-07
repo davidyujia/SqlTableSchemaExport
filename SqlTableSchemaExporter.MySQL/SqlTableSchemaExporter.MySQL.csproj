@@ -5,10 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DbSchemaExporter.Core\DbSchemaExporter.Core.csproj" />
+    <PackageReference Include="MySql.Data" Version="8.0.27" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.0.17" />
+    <ProjectReference Include="..\SqlTableSchemaExporter.Core\SqlTableSchemaExporter.Core.csproj" />
   </ItemGroup>
+
 </Project>

@@ -13,7 +13,7 @@ namespace SqlTableSchemaExporter
         public string DbType { get; set; }
         [Option('c', "connectionString", Required = true, HelpText = "Database's connection string.")]
         public string ConnectionString { get; set; }
-        [Option('e', "export", Required = false, HelpText = "Export type.")]
+        [Option('e', "export", Required = false, Default = "html", HelpText = "Export file type.")]
         public string ExportType { get; set; }
         [Option('f', "fileName", Required = false, HelpText = "Export file name.")]
         public string ExportFileName { get; set; }
@@ -33,13 +33,18 @@ namespace SqlTableSchemaExporter
     {
         public int Run(Options option)
         {
-            var service = GetTypeInstances<IDatabaseService>(x => x.DbTypeName(), option.DbType);
+            var service = GetTypeInstances<IDataSourceService>(x => x.DbTypeName(), option.DbType);
 
-            var exportService = GetTypeInstances<ITableExportService>(x => x.ExportName(), option.ExportType);
+            var exportService = GetTypeInstances<ITableExportService>(x => x.DefaultFileExtensionName(), option.ExportType);
 
             var tableInfos = service.GetTableSchema(option.ConnectionString);
 
-            var stream = exportService.Export(option.DatabaseName, tableInfos);
+            var dbName = !string.IsNullOrWhiteSpace(option.DatabaseName) 
+                ? option.DatabaseName 
+                : service.TryGetDbName(option.ConnectionString, out var name) 
+                ? name : "Database";
+
+            var stream = exportService.Export(dbName, tableInfos);
 
             var exportFileName = string.IsNullOrWhiteSpace(option.ExportFileName)
                 ? $"{service.DbTypeName()}.{exportService.DefaultFileExtensionName()}"
@@ -85,8 +90,8 @@ namespace SqlTableSchemaExporter
 
             var path = string.Empty;
 
-            var x = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) 
-                ? tempFileName.LastIndexOf('\\') 
+            var x = RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+                ? tempFileName.LastIndexOf('\\')
                 : tempFileName.LastIndexOf('/');
 
             if (x != -1)

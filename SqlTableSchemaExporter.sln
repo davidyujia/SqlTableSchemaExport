@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlTableSchemaExporter", "SqlTableSchemaExporter\SqlTableSchemaExporter.csproj", "{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlTableSchemaExporter.Core", "SqlTableSchemaExporter.Core\SqlTableSchemaExporter.Core.csproj", "{2D275189-5620-4B80-B7B4-C4D156E209E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.MSSQL", "SqlTableSchemaExporter.MSSQL\SqlTableSchemaExporter.MSSQL.csproj", "{609FE9FF-A4A0-417C-B28A-7EC091403CC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.PostgreSQL", "SqlTableSchemaExporter.PostgreSQL\SqlTableSchemaExporter.PostgreSQL.csproj", "{1B3379AB-2868-4764-B29B-4B700CA710B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.MySQL", "SqlTableSchemaExporter.MySQL\SqlTableSchemaExporter.MySQL.csproj", "{35FCE46B-A1FE-42F8-B49B-4BBB94109165}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ED9F1E9-0EFC-4B5E-91EB-3B5271DBAB05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D275189-5620-4B80-B7B4-C4D156E209E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609FE9FF-A4A0-417C-B28A-7EC091403CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609FE9FF-A4A0-417C-B28A-7EC091403CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609FE9FF-A4A0-417C-B28A-7EC091403CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609FE9FF-A4A0-417C-B28A-7EC091403CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3379AB-2868-4764-B29B-4B700CA710B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3379AB-2868-4764-B29B-4B700CA710B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3379AB-2868-4764-B29B-4B700CA710B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3379AB-2868-4764-B29B-4B700CA710B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35FCE46B-A1FE-42F8-B49B-4BBB94109165}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35FCE46B-A1FE-42F8-B49B-4BBB94109165}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35FCE46B-A1FE-42F8-B49B-4BBB94109165}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35FCE46B-A1FE-42F8-B49B-4BBB94109165}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {895A8875-26D6-4D63-B9A9-ABF92AD72673}
+	EndGlobalSection
+EndGlobal

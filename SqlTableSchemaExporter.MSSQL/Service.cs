@@ -1,21 +1,26 @@
-﻿using System;
+﻿using SqlTableSchemaExporter.Core;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text;
-using DbSchemaExporter.Core;
 
-namespace DbSchemaExporter.MsSql
+namespace SqlTableSchemaExporter.MSSQL
 {
-    public class MsSqlService : IDatabaseService
+
+    public class Service : IDataSourceService
     {
-        public IEnumerable<TableInfoWithColumnsModel> GetTableInfos(DatabaseSettingModel settingModel)
+        public string DbTypeName()
+        {
+            return "MSSQL";
+        }
+
+        public IEnumerable<TableInfoModel> GetTableSchema(string connectionString)
         {
             var resultTable = new DataTable();
             SqlConnection connection = null;
             try
             {
-                connection = new SqlConnection($"Data Source={settingModel.Host};Initial Catalog={settingModel.DatabaseName};Persist Security Info=True;User ID={settingModel.UserName};Password={settingModel.Password}");
+                connection = new SqlConnection(connectionString);
                 connection.Open();
 
                 #region SqlCommandString
@@ -39,8 +44,7 @@ ORDER BY a.TABLE_NAME , b.ORDINAL_POSITION
 
                 #endregion
                 var command = connection.CreateCommand();
-                command.CommandTimeout = 120;
-                command.CommandType = System.Data.CommandType.Text;
+                command.CommandType = CommandType.Text;
                 command.CommandText = sqlCommandString;
 
 
@@ -58,10 +62,10 @@ ORDER BY a.TABLE_NAME , b.ORDINAL_POSITION
                 }
             }
 
-            var result = new List<TableInfoWithColumnsModel>();
+            var result = new List<TableInfoModel>();
 
             TableInfoModel tableModel = null;
-            var columnInfos = new List<ColumnInfoModel>();
+
             foreach (DataRow row in resultTable.Rows)
             {
                 var table = Convert.ToString(row["Table"]);
@@ -82,25 +86,29 @@ ORDER BY a.TABLE_NAME , b.ORDINAL_POSITION
                 {
                     if (tableModel != null)
                     {
-                        result.Add(new TableInfoWithColumnsModel(tableModel, columnInfos));
+                        result.Add(tableModel);
                     }
-                    tableModel = new TableInfoModel { Name = table };
-                    columnInfos = new List<ColumnInfoModel>();
+                    tableModel = new TableInfoModel { Name = table, Columns = new List<ColumnInfoModel>() };
                 }
 
-                columnInfos.Add(new ColumnInfoModel
+                tableModel.Columns.Add(new ColumnInfoModel
                 {
                     Name = column,
-                    Type = $"{dataType}{length}",
+                    DataType = $"{dataType}{length}",
                     DefaultValue = defaultValue,
                     IsCanNull = isNull,
                     Comment = description,
                 });
             }
 
-            result.Add(new TableInfoWithColumnsModel(tableModel, columnInfos));
+            result.Add(tableModel);
 
             return result;
+        }
+
+        public bool TryGetDbName(string connectionString, out string dbName)
+        {
+            return Extensions.TryGetDbName(connectionString, "database", out dbName);
         }
     }
 }
