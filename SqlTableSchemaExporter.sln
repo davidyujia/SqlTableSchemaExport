@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlTableSchemaExporter", "S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlTableSchemaExporter.Core", "SqlTableSchemaExporter.Core\SqlTableSchemaExporter.Core.csproj", "{2D275189-5620-4B80-B7B4-C4D156E209E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.MSSQL", "SqlTableSchemaExporter.MSSQL\SqlTableSchemaExporter.MSSQL.csproj", "{609FE9FF-A4A0-417C-B28A-7EC091403CC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlTableSchemaExporter.MSSQL", "SqlTableSchemaExporter.MSSQL\SqlTableSchemaExporter.MSSQL.csproj", "{609FE9FF-A4A0-417C-B28A-7EC091403CC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.PostgreSQL", "SqlTableSchemaExporter.PostgreSQL\SqlTableSchemaExporter.PostgreSQL.csproj", "{1B3379AB-2868-4764-B29B-4B700CA710B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlTableSchemaExporter.PostgreSQL", "SqlTableSchemaExporter.PostgreSQL\SqlTableSchemaExporter.PostgreSQL.csproj", "{1B3379AB-2868-4764-B29B-4B700CA710B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.MySQL", "SqlTableSchemaExporter.MySQL\SqlTableSchemaExporter.MySQL.csproj", "{35FCE46B-A1FE-42F8-B49B-4BBB94109165}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlTableSchemaExporter.MySQL", "SqlTableSchemaExporter.MySQL\SqlTableSchemaExporter.MySQL.csproj", "{35FCE46B-A1FE-42F8-B49B-4BBB94109165}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlTableSchemaExporter.Export.Excel", "SqlTableSchemaExporter.Export.Excel\SqlTableSchemaExporter.Export.Excel.csproj", "{7B1A8DD4-CD8C-43DE-A21E-0A1F982C4FFC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{35FCE46B-A1FE-42F8-B49B-4BBB94109165}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35FCE46B-A1FE-42F8-B49B-4BBB94109165}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35FCE46B-A1FE-42F8-B49B-4BBB94109165}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1A8DD4-CD8C-43DE-A21E-0A1F982C4FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1A8DD4-CD8C-43DE-A21E-0A1F982C4FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1A8DD4-CD8C-43DE-A21E-0A1F982C4FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1A8DD4-CD8C-43DE-A21E-0A1F982C4FFC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,7 +8,20 @@
 		<PackageOutputPath>./nupkg</PackageOutputPath>
 		<VersionPrefix>1.0.0</VersionPrefix>
 		<VersionSuffix>alpha</VersionSuffix>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/davidyujia/SqlTableSchemaExporter</RepositoryUrl>
+		<PackageTags>tableschema,exporter,mssql,postgresql,mysql</PackageTags>
+		<AnalysisLevel>none</AnalysisLevel>
+		<Authors>davidyujia</Authors>
+		<PackageProjectUrl>https://github.com/davidyujia/SqlTableSchemaExporter</PackageProjectUrl>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="CommandLineParser" Version="2.8.0" />

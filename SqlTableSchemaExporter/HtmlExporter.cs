@@ -40,11 +40,11 @@ namespace SqlTableSchemaExporter
 <body>");
                 sb.AppendLine($"<h1>{table.Name}</h1>");
                 sb.AppendLine(@"<table>");
-                sb.AppendLine("<tr><th>Column Name</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>");
+                sb.AppendLine("<tr><th>Column Name</th><th>PK</th><th>Data Type</th><th>Default Value</th><th>Allow NULL</th><th>Comment</th></tr>");
 
                 foreach (var columnInfo in table.Columns)
                 {
-                    sb.AppendLine($"<tr><td>{columnInfo.Name}</td><td>{columnInfo.DataType}</td><td>{columnInfo.DefaultValue}</td><td>{columnInfo.IsCanNull}</td><td>{columnInfo.Comment}</td></tr>");
+                    sb.AppendLine($"<tr><td>{columnInfo.Name}</td><td>{columnInfo.IsPrimaryKey}</td><td>{columnInfo.DataType}</td><td>{columnInfo.DefaultValue}</td><td>{columnInfo.IsCanNull}</td><td>{columnInfo.Comment}</td></tr>");
                 }
 
                 sb.Append("</table></body></html>");
